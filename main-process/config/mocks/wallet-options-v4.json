@@ -1,0 +1,270 @@
+{
+  "platforms": {
+    "web": {
+      "application": {
+        "enableDomainMigrationRedirects": true,
+        "announcements": {
+          "public": {},
+          "wallet": {},
+          "sendBch": {
+            "id": "bch-disabled-lockbox-send",
+            "type": "info",
+            "icon": "alert-filled",
+            "hideType": "collapse",
+            "header": {
+              "en": "Ongoing Service Interruption"
+            },
+            "sections": [
+              {
+                "body": {
+                  "en": "At 16:40 UTC on Thursday 15th November, the Bitcoin Cash network experienced a hard fork."
+                }
+              },
+              {
+                "body": {
+                  "en": "To keep your funds safe, we have temporarily suspended the ability to send, request, and exchange Bitcoin Cash for Lockbox devices only. We will reintroduce these features as soon as the network stabilizes."
+                }
+              }
+            ],
+            "action": {
+              "title": {
+                "en": "Read More"
+              },
+              "link": "https://blog.blockchain.com/2018/11/14/the-bch-hard-fork/"
+            }
+          },
+          "receiveBch": {
+            "id": "bch-disabled-lockbox-receive",
+            "type": "info",
+            "icon": "alert-filled",
+            "hideType": "collapse",
+            "header": {
+              "en": "Ongoing Service Interruption"
+            },
+            "sections": [
+              {
+                "body": {
+                  "en": "At 16:40 UTC on Thursday 15th November, the Bitcoin Cash network experienced a hard fork."
+                }
+              },
+              {
+                "body": {
+                  "en": "To keep your funds safe, we have temporarily suspended the ability to send, request, and exchange Bitcoin Cash for Lockbox devices only. We will reintroduce these features as soon as the network stabilizes."
+                }
+              }
+            ],
+            "action": {
+              "title": {
+                "en": "Read More"
+              },
+              "link": "https://blog.blockchain.com/2018/11/14/the-bch-hard-fork/"
+            }
+          }
+        }
+      },
+      "btc": {
+        "availability": {
+          "send": true,
+          "request": true,
+          "lockbox": true,
+          "exchangeTo": true,
+          "exchangeFrom": true
+        },
+        "config": {
+          "network": "bitcoin"
+        }
+      },
+      "bch": {
+        "availability": {
+          "send": true,
+          "request": true,
+          "lockbox": true,
+          "exchangeTo": true,
+          "exchangeFrom": true
+        }
+      },
+      "bsv": {
+        "availability": {
+          "send": true,
+          "request": false,
+          "lockbox": false,
+          "exchangeTo": false,
+          "exchangeFrom": true
+        }
+      },
+      "eth": {
+        "availability": {
+          "send": true,
+          "request": true,
+          "lockbox": true,
+          "exchangeTo": true,
+          "exchangeFrom": true
+        },
+        "lastTxFuse": 86400,
+        "config": {
+          "network": 1
+        }
+      },
+      "xlm": {
+        "availability": {
+          "send": true,
+          "request": true,
+          "lockbox": true,
+          "exchangeTo": true,
+          "exchangeFrom": true
+        },
+        "config": {
+          "network": "public"
+        }
+      },
+      "coinify": {
+        "countries": [
+          "GB",
+          "AT",
+          "BE",
+          "BG",
+          "HR",
+          "CY",
+          "CZ",
+          "DK",
+          "EE",
+          "FI",
+          "FR",
+          "GF",
+          "DE",
+          "GI",
+          "GR",
+          "GP",
+          "GG",
+          "HU",
+          "IS",
+          "IE",
+          "IM",
+          "IT",
+          "JE",
+          "LV",
+          "LI",
+          "LT",
+          "LU",
+          "MT",
+          "MQ",
+          "YT",
+          "MC",
+          "NL",
+          "NO",
+          "PL",
+          "PT",
+          "RE",
+          "BL",
+          "MF",
+          "PM",
+          "SM",
+          "SK",
+          "SI",
+          "ES",
+          "SE",
+          "CH"
+        ],
+        "config": {
+          "partnerId": 24,
+          "production": false,
+          "iSignThisDomain": "https://stage-verify.isignthis.com"
+        }
+      },
+      "sfox": {
+        "countries": ["US"],
+        "states": [
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "MI",
+          "MN",
+          "MO",
+          "MT",
+          "NE",
+          "NV",
+          "OK",
+          "PA",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "VA",
+          "WI",
+          "WV"
+        ],
+        "config": {
+          "production": false,
+          "apiKey": "6CD61A0E965D48A7B1883A860490DC9E",
+          "plaid": "0b041cd9e9fbf1e7d93a0d5a39f5b9",
+          "plaidEnv": "sandbox",
+          "siftScience": "a19cc360a1"
+        }
+      },
+      "shapeshift": {
+        "availability": {
+          "buy": true,
+          "sell": true,
+          "history": true
+        },
+        "countries": "*",
+        "states": [
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "MI",
+          "MN",
+          "MO",
+          "MT",
+          "NE",
+          "NV",
+          "OK",
+          "PA",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "VA",
+          "WI",
+          "WV"
+        ],
+        "config": {
+          "apiKey": "b7a7c320c19ea3a8e276c8921bc3ff79ec064d2cd9d98ab969acc648246b4be5ab2379af704c5d3a3021c0ddf82b3e479590718847c1301e1a85331d2d2a8370",
+          "upperLimit": 750
+        }
+      }
+    },
+    "ios": {},
+    "android": {}
+  },
+  "domains": {
+    "root": "https://blockchain.info",
+    "api": "https://api.blockchain.info",
+    "webSocket": "wss://ws.blockchain.info",
+    "walletHelper": "https://wallet-helper.blockchain.com",
+    "comWalletApp": "https://login.blockchain.com",
+    "comRoot": "https://www.blockchain.com",
+    "ledger": "https://manager.api.live.ledger.com",
+    "ledgerSocket": "wss://api.ledgerwallet.com",
+    "horizon": "https://horizon.stellar.org",
+    "veriff": "https://magic.veriff.me"
+  }
+}

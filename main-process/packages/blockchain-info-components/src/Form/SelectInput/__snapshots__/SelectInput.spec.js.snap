@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInput component default renders correctly 1`] = `
+<template__StyledSelect
+  borderColor="gray-2"
+  classNamePrefix="bc"
+  components={
+    Object {
+      "Control": [Function],
+      "DropdownIndicator": [Function],
+      "IndicatorSeparator": [Function],
+      "Option": [Function],
+      "ValueContainer": [Function],
+    }
+  }
+  options={
+    Array [
+      Object {
+        "label": "test",
+        "value": "value",
+      },
+    ]
+  }
+/>
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast component default renders correctly 1`] = `
+<Toast__Wrapper>
+  <Toast__Container
+    color="brand-secondary"
+  >
+    <Toast__Content>
+      <span>
+        Default
+      </span>
+    </Toast__Content>
+    <Toast__Close
+      color="brand-secondary"
+      cursor={true}
+      name="close"
+      onClick={[Function]}
+      size="20px"
+      weight={300}
+    />
+  </Toast__Container>
+</Toast__Wrapper>
+`;
+
+exports[`Toast component error renders correctly 1`] = `
+<Toast__Wrapper>
+  <Toast__Container
+    color="error"
+  >
+    <Toast__Content>
+      <span>
+        Default
+      </span>
+    </Toast__Content>
+    <Toast__Close
+      color="error"
+      cursor={true}
+      name="close"
+      onClick={[Function]}
+      size="20px"
+      weight={300}
+    />
+  </Toast__Container>
+</Toast__Wrapper>
+`;
+
+exports[`Toast component success renders correctly 1`] = `
+<Toast__Wrapper>
+  <Toast__Container
+    color="success"
+  >
+    <Toast__Content>
+      <span>
+        Default
+      </span>
+    </Toast__Content>
+    <Toast__Close
+      color="success"
+      cursor={true}
+      name="close"
+      onClick={[Function]}
+      size="20px"
+      weight={300}
+    />
+  </Toast__Container>
+</Toast__Wrapper>
+`;

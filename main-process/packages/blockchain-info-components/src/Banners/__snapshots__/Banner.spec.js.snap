@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner component type alert renders correctly 1`] = `
+<Banner__Container
+  color="brand-secondary"
+>
+  <Icon
+    color="brand-secondary"
+    cursor={false}
+    name="bell"
+    size="18px"
+    weight={300}
+  />
+  <Banner__BannerContent
+    color="brand-secondary"
+    size="12px"
+    uppercase={false}
+    weight={400}
+  >
+    ALERT
+  </Banner__BannerContent>
+</Banner__Container>
+`;
+
+exports[`Banner component type caution renders correctly 1`] = `
+<Banner__Container
+  color="brand-yellow"
+  width="130%"
+>
+  <Icon
+    color="brand-yellow"
+    cursor={false}
+    name="alert-filled"
+    size="18px"
+    weight={300}
+  />
+  <Banner__BannerContent
+    color="brand-yellow"
+    size="12px"
+    uppercase={false}
+    weight={400}
+  >
+    ALERT
+  </Banner__BannerContent>
+</Banner__Container>
+`;
+
+exports[`Banner component type standard renders correctly 1`] = `
+<Banner__Container
+  color="brand-secondary"
+>
+  <Banner__BannerContent
+    color="brand-secondary"
+    size="12px"
+    uppercase={false}
+    weight={400}
+  >
+    STANDARD
+  </Banner__BannerContent>
+</Banner__Container>
+`;
+
+exports[`Banner component type success renders correctly 1`] = `
+<Banner__Container
+  color="success"
+>
+  <Icon
+    color="success"
+    cursor={false}
+    name="checkmark-in-circle"
+    size="18px"
+    weight={300}
+  />
+  <Banner__BannerContent
+    color="success"
+    size="12px"
+    uppercase={false}
+    weight={400}
+  >
+    SUCCESS
+  </Banner__BannerContent>
+</Banner__Container>
+`;
+
+exports[`Banner component type warning renders correctly 1`] = `
+<Banner__Container
+  color="error"
+>
+  <Icon
+    color="error"
+    cursor={false}
+    name="alert-filled"
+    size="18px"
+    weight={300}
+  />
+  <Banner__BannerContent
+    color="error"
+    size="12px"
+    uppercase={true}
+    weight={400}
+  >
+    WARNING
+  </Banner__BannerContent>
+</Banner__Container>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component default renders correctly 1`] = `
+.c0 {
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: none;
+  font-style: normal;
+  cursor: inherit;
+  display: block;
+  opacity: 1;
+}
+
+<div
+  className="c0"
+  color="gray-1"
+  cursor="inherit"
+  opacity={1}
+  size="16px"
+>
+  <span>
+    Hello World
+  </span>
+   
+</div>
+`;

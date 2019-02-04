@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableRow component renders correctly 1`] = `
+<TableRow__Wrapper
+  border={true}
+  padding={true}
+>
+  <span>
+    Default
+  </span>
+</TableRow__Wrapper>
+`;

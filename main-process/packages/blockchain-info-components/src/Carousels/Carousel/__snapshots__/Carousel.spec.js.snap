@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel component default renders correctly 1`] = `
+<template__Wrapper>
+  <template__Content
+    height={12}
+    total={12}
+  >
+    <template__Arrow
+      left={true}
+    />
+    <template__Slider
+      height={12}
+      index={4}
+      total={12}
+    />
+    <template__Arrow />
+  </template__Content>
+</template__Wrapper>
+`;
