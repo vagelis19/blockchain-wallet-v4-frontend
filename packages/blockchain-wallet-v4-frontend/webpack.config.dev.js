@@ -199,6 +199,7 @@ module.exports = {
       app.get('/Resources/wallet-options-v4.json', function(req, res) {
         // combine wallet options base with custom environment config
         mockWalletOptions.domains = {
+          mainProcess: `http://localhost:8082`,
           root: envConfig.ROOT_URL,
           api: envConfig.API_DOMAIN,
           webSocket: envConfig.WEB_SOCKET_URL,
@@ -257,7 +258,7 @@ module.exports = {
         "style-src 'self' 'unsafe-inline'",
         `frame-src ${iSignThisDomain} ${envConfig.WALLET_HELPER_DOMAIN} ${
           envConfig.ROOT_URL
-        } https://magic.veriff.me https://localhost:8080 http://localhost:8080`,
+        } https://magic.veriff.me https://localhost:8080 http://localhost:8080 https://localhost:8082 http://localhost:8082`,
         `child-src ${iSignThisDomain} ${envConfig.WALLET_HELPER_DOMAIN} blob:`,
         [
           'connect-src',

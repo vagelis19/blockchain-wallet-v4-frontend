@@ -17,13 +17,14 @@ const iSignThisDomain =
 
 let envConfig = {}
 let manifestCacheBust = new Date().getTime()
+const port = 8082
 let sslEnabled = process.env.DISABLE_SSL
   ? false
   : fs.existsSync(PATHS.sslConfig + '/key.pem') &&
     fs.existsSync(PATHS.sslConfig + '/cert.pem')
 let localhostUrl = sslEnabled
-  ? 'https://localhost:8080'
-  : 'http://localhost:8080'
+  ? `https://localhost:${port}`
+  : `http://localhost:${port}`
 
 try {
   envConfig = require(PATHS.envConfig + `/${process.env.NODE_ENV}` + '.js')
@@ -61,7 +62,7 @@ module.exports = {
     app: [
       '@babel/polyfill',
       'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:8080',
+      `webpack-dev-server/client?http://localhost:${port}`,
       'webpack/hot/only-dev-server',
       PATHS.src + '/index.js'
     ]
@@ -192,7 +193,7 @@ module.exports = {
     key: sslEnabled
       ? fs.readFileSync(PATHS.sslConfig + '/key.pem', 'utf8')
       : '',
-    port: 8080,
+    port,
     hot: true,
     historyApiFallback: true,
     before(app) {
@@ -200,6 +201,7 @@ module.exports = {
         // combine wallet options base with custom environment config
         mockWalletOptions.domains = {
           root: envConfig.ROOT_URL,
+          rootDocument: `http://localhost:8080`,
           api: envConfig.API_DOMAIN,
           webSocket: envConfig.WEB_SOCKET_URL,
           walletHelper: envConfig.WALLET_HELPER_DOMAIN,
@@ -257,13 +259,13 @@ module.exports = {
         "style-src 'self' 'unsafe-inline'",
         `frame-src ${iSignThisDomain} ${envConfig.WALLET_HELPER_DOMAIN} ${
           envConfig.ROOT_URL
-        } https://magic.veriff.me https://localhost:8080 http://localhost:8080`,
+        } https://magic.veriff.me https://localhost:${port} http://localhost:${port}`,
         `child-src ${iSignThisDomain} ${envConfig.WALLET_HELPER_DOMAIN} blob:`,
         [
           'connect-src',
           "'self'",
-          'ws://localhost:8080',
-          'wss://localhost:8080',
+          `ws://localhost:${port}`,
+          `wss://localhost:${port}`,
           'wss://api.ledgerwallet.com',
           'wss://ws.testnet.blockchain.info/inv',
           envConfig.WEB_SOCKET_URL,

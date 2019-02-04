@@ -1,5 +1,5 @@
 import { over, set } from 'ramda-lens'
-import { compose } from 'ramda'
+import { always, compose, evolve } from 'ramda'
 
 import * as T from './actionTypes.js'
 import { Wrapper, Wallet, Options, HDWallet, HDWalletList } from '../../types'
@@ -7,6 +7,31 @@ import { Wrapper, Wallet, Options, HDWallet, HDWalletList } from '../../types'
 export const WRAPPER_INITIAL_STATE = Wrapper.fromJS(
   Wrapper.createNewReadOnly('', '')
 )
+
+// an object containing reducer methods for each type of action
+const reducers = {}
+
+// MERGE_WRAPPER: Merge wrapper from the Main Process.
+
+const redact = always(undefined)
+
+const wrapperMask = {
+  password: redact,
+  wallet: {
+    guid: redact,
+    hd_wallets: [{ seed_hex: redact }]
+  }
+}
+
+const wrapperMerger = (oldValue, newValue) =>
+  newValue === undefined ? oldValue : newValue
+
+reducers[T.MERGE_WRAPPER] = (state, { payload }) => {
+  const redactedPayload = Wrapper.fromJS(evolve(wrapperMask, payload))
+  return state.mergeDeepWith(wrapperMerger, redactedPayload)
+}
+
+//
 
 export const wrapperReducer = (state = WRAPPER_INITIAL_STATE, action) => {
   const { type } = action
@@ -17,7 +42,9 @@ export const wrapperReducer = (state = WRAPPER_INITIAL_STATE, action) => {
     }
     case T.REFRESH_WRAPPER:
     case T.SET_WRAPPER: {
-      return action.payload
+      // We may need to convert from JSON if the action is coming from another
+      // realm.
+      return Wrapper.fromJS(action.payload)
     }
     case T.DELETE_WRAPPER: {
       return WRAPPER_INITIAL_STATE
@@ -110,8 +137,13 @@ export const wrapperReducer = (state = WRAPPER_INITIAL_STATE, action) => {
       )
       return set(mvLens, true, state)
     }
-    default:
-      return state
+    default: {
+      if (type in reducers) {
+        return reducers[type](state, action)
+      } else {
+        return state
+      }
+    }
   }
 }
 

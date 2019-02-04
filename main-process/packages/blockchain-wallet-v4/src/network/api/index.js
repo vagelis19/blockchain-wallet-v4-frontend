@@ -20,13 +20,14 @@ import httpService from './http'
 import apiAuthorize from './apiAuthorize'
 
 export default ({
+  axiosAdapter,
   options,
   apiKey,
   getAuthCredentials,
   reauthenticate,
   networks
 } = {}) => {
-  const http = httpService({ apiKey })
+  const http = httpService({ axiosAdapter, apiKey })
   const authorizedHttp = apiAuthorize(http, getAuthCredentials, reauthenticate)
   const apiUrl = options.domains.api
   const horizonUrl = options.domains.horizon

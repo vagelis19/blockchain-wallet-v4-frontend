@@ -1,0 +1,9 @@
+{
+  "name": "web-microkernel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash-es": "4.17.11"
+  }
+}

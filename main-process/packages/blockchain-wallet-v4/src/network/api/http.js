@@ -5,7 +5,7 @@ import { prop, path, pathOr, merge } from 'ramda'
 axios.defaults.withCredentials = false
 axios.defaults.timeout = Infinity
 
-export default ({ apiKey }) => {
+export default ({ axiosAdapter, apiKey }) => {
   const encodeData = (data, contentType) => {
     const defaultData = {
       api_code: apiKey,
@@ -39,6 +39,7 @@ export default ({ apiKey }) => {
     ...options
   }) =>
     axios({
+      adapter: axiosAdapter,
       url: `${url}${endPoint}`,
       method,
       data: encodeData(data, contentType),

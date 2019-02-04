@@ -88,6 +88,7 @@
     "@ledgerhq/hw-app-btc": "4.30.0",
     "@ledgerhq/hw-app-str": "4.26.0-beta.ebeb3540",
     "@ledgerhq/hw-transport-u2f": "4.31.0",
+    "@nodeguy/channel": "0.6.4",
     "awesome-phonenumber": "2.2.6",
     "base-64": "0.1.0",
     "bignumber.js": "8.0.1",

@@ -1,7 +1,8 @@
 import { map, range } from 'ramda'
 import {
   addressLookaheadCount,
-  getHDAccountAddressPromises
+  getHDAccountAddressPromises,
+  shouldSync
 } from './middleware'
 import { getReceiveAddress } from '../../types/HDAccount'
 import { getAccountXpub } from '../wallet/selectors'
@@ -79,4 +80,15 @@ describe('getHDAccountAddressPromises', () => {
 
     return promise
   })
+})
+
+it(`shouldSync if the wallet changes`, () => {
+  expect(
+    shouldSync({
+      newAuthenticated: true,
+      newWallet: 43,
+      oldAuthenticated: true,
+      oldWallet: 42
+    })
+  ).toEqual(true)
 })

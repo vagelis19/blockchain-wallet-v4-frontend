@@ -1,3 +1,4 @@
+import { FORWARD } from '../../../../blockchain-wallet-v4-frontend/src/middleware/actionTypes'
 import { call, put, select } from 'redux-saga/effects'
 import BIP39 from 'bip39'
 import Bitcoin from 'bitcoinjs-lib'
@@ -120,6 +121,14 @@ export default ({ api, networks }) => {
       code
     )
     yield put(A.wallet.setWrapper(wrapper))
+
+    // Temporary: Forward the wrapper to the root document to initialize
+    // sensitive fields (seed, etc).  This will be removed in the future when
+    // the root document handles login, etc.
+    yield put({
+      type: FORWARD,
+      payload: A.wallet.setWrapper(Wrapper.toJS(wrapper))
+    })
   }
 
   const upgradeToHd = function*({ password }) {
