@@ -147,7 +147,7 @@ const decodeFunction = (context, { key: functionKey, length }) => {
           // manually.
           context.postMessage({
             0: [
-              `functionApplication`,
+              `functionApply`,
               {
                 args: encodeWithoutPersistentReferences(context, args),
                 functionKey,
@@ -165,10 +165,7 @@ const decodeFunction = (context, { key: functionKey, length }) => {
   return keyedReferences[functionKey]
 }
 
-decoders.functionApplication = (
-  context,
-  { args, functionKey, returnValueKey }
-) => {
+decoders.functionApply = (context, { args, functionKey, returnValueKey }) => {
   const { keyedReferences, postMessage, reportExceptionsIn } = context
   const func = keyedReferences[functionKey]
   const decodedArgs = decode(context, args)
